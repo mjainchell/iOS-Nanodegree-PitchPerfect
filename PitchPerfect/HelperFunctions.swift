@@ -9,11 +9,18 @@
 import UIKit
 
 extension UIViewController {
-
+    
+    // Helper function to scale buttons
     func scaleTheButtons (_ button: UIButton...) {
         for i in button {
             i.imageView?.contentMode = .scaleAspectFit
         }
+    }
+    
+    // Helper function to show alerts
+    func showAlert(_ alertType: UIAlertController, _ actionType: UIAlertAction) {
+        alertType.addAction(actionType)
+        self.present(alertType, animated: true, completion: nil)
     }
 }
 

@@ -5,7 +5,8 @@
 //  Created by Mark Jainchell on 5/15/17.
 //  The majority of the code for this app is provided through the Udacity lesson PitchPerfect, as part of the iOS Nanodegree
 //  https://www.udacity.com/
-//
+//  The alert functionality was inspired by an answer on:
+//  Stack Overflow: http://stackoverflow.com/questions/24195310/how-to-add-an-action-to-a-uialertview-button-using-swift-ios
 
 import UIKit
 import AVFoundation
@@ -13,7 +14,9 @@ import AVFoundation
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     var audioRecorder: AVAudioRecorder!
-
+    let recordingErrorAlert = UIAlertController(title: "Recording Error", message: "Recording was not successful!", preferredStyle: .alert)
+    let tryAgainAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.default)
+    
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
@@ -25,19 +28,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Buttons scaled as suggested by Udacity Code Review
         scaleTheButtons(recordButton, stopRecordingButton)
     }
     
     func recordingLabelAndButtonAppearanceRecordingStatus(_ appIsRecording: Bool) {
-        if appIsRecording {
-            recordingLabel.text = "Recording in Progress..."
-            stopRecordingButton.isEnabled = true
-            recordButton.isEnabled = false
-        }else {
-            recordingLabel.text = "Tap to Record"
-            recordButton.isEnabled = true
-            stopRecordingButton.isEnabled = false
-        }
+        // Refactoring completed as suggested by Udacity Code Review
+        recordingLabel.text = appIsRecording ? "Recording in Progress..." : "Tap to Record"
+        stopRecordingButton.isEnabled = appIsRecording
+        recordButton.isEnabled = !appIsRecording
     }
 
     @IBAction func recordAudio(_ sender: Any) {
@@ -69,7 +68,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         if flag {
             performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
         } else {
-            print("Recording was not successful")
+            // Alert, instead of Print statement as suggested by Udacity Code Review
+            showAlert(recordingErrorAlert, tryAgainAction)
         }
     }
     
