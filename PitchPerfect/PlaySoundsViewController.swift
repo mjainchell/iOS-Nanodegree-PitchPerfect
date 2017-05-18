@@ -59,5 +59,6 @@ class PlaySoundsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureUI(.notPlaying)
+        scaleTheButtons(snailButton, chipmunkButton, rabbitButton, vaderButton, echoButton, reverbButton, stopButton)
     }
 }

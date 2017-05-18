@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70886ADD1ECD1E720050DC3C /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70886ADC1ECD1E720050DC3C /* HelperFunctions.swift */; };
 		708F24F31EC974A9005A46D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F24F21EC974A9005A46D6 /* AppDelegate.swift */; };
 		708F24F51EC974A9005A46D6 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F24F41EC974A9005A46D6 /* RecordSoundsViewController.swift */; };
 		708F24F81EC974A9005A46D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 708F24F61EC974A9005A46D6 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70886ADC1ECD1E720050DC3C /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		708F24EF1EC974A9005A46D6 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		708F24F21EC974A9005A46D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		708F24F41EC974A9005A46D6 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				708F24FE1EC974A9005A46D6 /* Info.plist */,
 				708F25041ECAAFB6005A46D6 /* PlaySoundsViewController.swift */,
 				708F25061ECAD349005A46D6 /* PlaySoundsViewController+Audio.swift */,
+				70886ADC1ECD1E720050DC3C /* HelperFunctions.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70886ADD1ECD1E720050DC3C /* HelperFunctions.swift in Sources */,
 				708F24F51EC974A9005A46D6 /* RecordSoundsViewController.swift in Sources */,
 				708F25071ECAD349005A46D6 /* PlaySoundsViewController+Audio.swift in Sources */,
 				708F25051ECAAFB6005A46D6 /* PlaySoundsViewController.swift in Sources */,
@@ -309,6 +313,7 @@
 				708F25031EC974A9005A46D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
